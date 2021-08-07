@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 type Person struct {
 	name    string
@@ -9,8 +12,8 @@ type Person struct {
 }
 
 type Employee struct {
-	name    string
-	address string
+	name     string
+	address  string
 	position string
 }
 
@@ -185,18 +188,200 @@ type Employee struct {
 
 // 	for _, value := range arrEmployee {
 // 		fmt.Println(value.name)
+// // 	}
+// 	func ShowName(name string) string {
+// 		return name
 // 	}
 
+// 	func addition(numberOne int, numberTwo int)  {
+// 		fmt.Println(numberOne + numberTwo) //returnnya
+// 	}
 
-	func add(x int, y int) int {
-	return x + y
-	}
+// 	func main() {
+// 	fmt.Println(ShowName("Reza"))
+// 	addition(5, 6)
+// 	}
 
-	func main() {
-	fmt.Println(add(42, 13))
-	}
+// func tambah(angka1 int, angka2 int) int {
+// 	a := angka1 + angka2
+// 	return a
+// }
+
+// func kurang(angka1 int, angka2 int) int {
+// 	a := angka1 - angka2
+// 	return a
+// }
+
+// func kali(angka1 int, angka2 int) int {
+// 	a := angka1 * angka2
+// 	return a
+// }
+
+// func bagi(angka1 int, angka2 int) int {
+// 	a := angka1 / angka2
+// 	return a
+// }
+
+// func mod(angka1 int, angka2 int) int {
+// 	a := angka1 % angka2
+// 	return a
+// }
+
+// func main() {
+// 	angka1 := 20
+// 	angka2 := 5
+
+// 	hasil := tambah(angka1, angka2)
+// 	fmt.Println("Penjumlahan Antara", angka1, "+", angka2, "Adalah", hasil)
+
+// 	hasilKurang := kurang(angka1, angka2)
+// 	fmt.Println("Pengurangan Antara", angka1, "-", angka2, "Adalah", hasilKurang)
+
+// 	hasilKali := kali(angka1, angka2)
+// 	fmt.Println("Perkalian Antara", angka1, "*", angka2, "Adalah", hasilKali)
+
+// 	hasilBagi := bagi(angka1, angka2)
+// 	fmt.Println("Pembagian Antara", angka1, "/", angka2, "Adalah", hasilBagi)
+
+// 	hasilMod := mod(angka1, angka2)
+// 	fmt.Println("Modulasi Antara", angka1, "%", angka2, "Adalah", hasilMod)
+// }
+
+// func akar(angka1, angka2 int) (int, error) {
+// 	return angka1 * angka2, nil
+// }
+
+// func main ()  {
+// 	angka1 := 20
+// 	angka2 := 20
+// 	result, err := akar()
+
+// 	if err != nil {
+// 		return err, nil
+// 	}
+
+// 	hasil := akar(angka1, angka2)
+// 	fmt.Println(hasil)
+// } BELUM
+
+// type Persegi struct {
+// 	Sisi float64
+// }
+
+// //traditional function
+// func Luas(sisi Persegi) float64 {
+// 	return sisi.Sisi * sisi.Sisi
+// }
+
+// //method with receiver
+// func (s Persegi) Luas() float64{
+// 	return s.Sisi * s.Sisi
+// }
 
 
+// func main() {
+// 	persegi1 := Persegi{6}
+// 	fmt.Println(Luas(persegi1))
+// 	fmt.Println(persegi1.Luas())
 
+// }
 
+// p x l
 
+//method
+// type PersegiPanjang struct {
+// 	Panjang float64
+// 	Lebar float64
+// }
+
+// //keliling
+// func (pp PersegiPanjang) Keliling() float64{
+// 	return 2 *  (pp.Panjang * pp.Lebar)
+// }
+
+// func (pp PersegiPanjang) Luas() float64  {
+// 	return pp.Panjang * pp.Lebar
+// }
+
+// func main()  {
+// 	pp := PersegiPanjang{Panjang: 4, Lebar: 5}
+// 	fmt.Println("Kel : ", pp.Keliling())
+// 	fmt.Println("Luas : ", pp.Luas())
+
+	
+// }
+
+// type Lingkaran struct {
+// 	Jari2 float64
+// 	Diameter float64
+	
+// }
+
+// func (l Lingkaran) LuasLingkaran() float64  {
+// 	const PI float64 = 3.14
+// 	return math.PI * l.Jari2
+	
+// }
+
+// func main()  {
+// 	l := Lingkaran{Panjang: 4, Lebar: 5} // belum
+
+//interface //global method
+type BangunDatar interface {
+	Luas()
+	Keliling()
+}
+
+type Persegi struct {
+	Sisi float64
+}
+
+type PersegiPanjang struct {
+	Panjang float64
+	Lebar float64
+}
+
+type Lingkaran struct {
+	Diameter float64
+}
+
+func (l Lingkaran) keliling() float64  {
+	return math.Round(math.Pi * l.Diameter)
+}
+
+func (pp PersegiPanjang) Keliling() float64  {
+	return pp.Panjang * pp.Lebar
+}
+
+func (pp PersegiPanjang) Luas() float64  {
+	return 2 * (pp.Panjang * pp.Lebar)
+}
+
+func (p Persegi) Luas() float64  {
+	return p.Sisi * p.Sisi
+}
+
+func (p Persegi) Keliling() float64 {
+	return 4 * p.Sisi
+}
+
+func hitungPersegi(p Persegi)  {
+	fmt.Println(p.Keliling())
+	fmt.Println(p.Luas())
+}
+
+func hitungPersegiPanjang(pp PersegiPanjang)  {
+	fmt.Println(pp.Keliling())
+	fmt.Println(pp.Luas())
+}
+
+func hitungLingkaran(l Lingkaran)  {
+	fmt.Println(l.keliling())
+}
+
+func main()  {
+	hitungPersegi(Persegi{Sisi: 6})
+	hitungPersegiPanjang(PersegiPanjang{Panjang: 6, Lebar: 7})
+	hitungLingkaran(Lingkaran{Diameter: 6})
+	
+}
