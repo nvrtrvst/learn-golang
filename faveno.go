@@ -1,10 +1,5 @@
 package main
 
-import (
-	"fmt"
-	"math"
-)
-
 type Person struct {
 	name    string
 	age     int
@@ -327,65 +322,125 @@ type Employee struct {
 // 	l := Lingkaran{Panjang: 4, Lebar: 5} // belum
 
 //interface //global method
-type BangunDatar interface {
-	Luas()
-	Keliling()
-}
+// type BangunDatar interface {
+// 	Luas()
+// 	Keliling()
+// }
 
-type Persegi struct {
-	Sisi float64
-}
+// type Persegi struct {
+// 	Sisi float64
+// }
 
-type PersegiPanjang struct {
-	Panjang float64
-	Lebar float64
-}
+// type PersegiPanjang struct {
+// 	Panjang float64
+// 	Lebar float64
+// }
 
-type Lingkaran struct {
-	Diameter float64
-}
+// type Lingkaran struct {
+// 	Diameter float64
+// }
 
-func (l Lingkaran) keliling() float64  {
-	return math.Round(math.Pi * l.Diameter)
-}
+// func (l Lingkaran) keliling() float64  {
+// 	return math.Round(math.Pi * l.Diameter)
+// }
 
-func (pp PersegiPanjang) Keliling() float64  {
-	return pp.Panjang * pp.Lebar
-}
+// func (pp PersegiPanjang) Keliling() float64  {
+// 	return pp.Panjang * pp.Lebar
+// }
 
-func (pp PersegiPanjang) Luas() float64  {
-	return 2 * (pp.Panjang * pp.Lebar)
-}
+// func (pp PersegiPanjang) Luas() float64  {
+// 	return 2 * (pp.Panjang * pp.Lebar)
+// }
 
-func (p Persegi) Luas() float64  {
-	return p.Sisi * p.Sisi
-}
+// func (p Persegi) Luas() float64  {
+// 	return p.Sisi * p.Sisi
+// }
 
-func (p Persegi) Keliling() float64 {
-	return 4 * p.Sisi
-}
+// func (p Persegi) Keliling() float64 {
+// 	return 4 * p.Sisi
+// }
 
-func hitungPersegi(p Persegi)  {
-	fmt.Println(p.Keliling())
-	fmt.Println(p.Luas())
-}
+// func hitungPersegi(p Persegi)  {
+// 	fmt.Println(p.Keliling())
+// 	fmt.Println(p.Luas())
+// }
 
-func hitungPersegiPanjang(pp PersegiPanjang)  {
-	fmt.Println(pp.Keliling())
-	fmt.Println(pp.Luas())
-}
+// func hitungPersegiPanjang(pp PersegiPanjang)  {
+// 	fmt.Println(pp.Keliling())
+// 	fmt.Println(pp.Luas())
+// }
 
-func hitungLingkaran(l Lingkaran)  {
-	fmt.Println(l.keliling())
-}
+// func hitungLingkaran(l Lingkaran)  {
+// 	fmt.Println(l.keliling())
+// }
 
-func main()  {
-	hitungPersegi(Persegi{Sisi: 6})
-	hitungPersegiPanjang(PersegiPanjang{Panjang: 6, Lebar: 7})
-	hitungLingkaran(Lingkaran{Diameter: 6})
+// func main()  {
+
+	// printSlice("a", a)
+
+	// printSlice("b", b)
+
+	// c := b[:2]
+	// printSlice("c", c)
+
+	// printSlice("d", d)
+
+	// // fmt.Println(len(result))
+	// }
+	// func printSlice(s string, x[] int) {
+	// 	fmt.Printf("%s len=%d cap=%d %v\n",
+	// 	s, len(x), cap(x), x)
+
+	// }
+		
+	// }
+
+	// hitungPersegi(Persegi{Sisi: 6})
+	// hitungPersegiPanjang(PersegiPanjang{Panjang: 6, Lebar: 7})
+	// hitungLingkaran(Lingkaran{Diameter: 6})
+
+
+	// before := time.Now()
+	// sumSquares := 0
+	// numberOfData := 100_000
+	// squaresOfTheSum:=0
+	// sumSquares=(numberOfData*(numberOfData+1)*(2*numberOfData+1))/6
+	// sumData:=(numberOfData*(numberOfData+1))/2
+	// squaresOfTheSum = sumData*sumData
+	// diffSums :=  squaresOfTheSum - sumSquares
+	// fmt.Println("Selisis Jumlah Kuadrat Adalah : ",diffSums)
+	// after := time.Now()
+	// fmt.Println("Waktu eksekusi", after.Nanosecond()-before.Nanosecond(), "nano second")
+
 	
-}
 
+
+
+	// var primes []Employee
+	// 	arrEmployee = append(arrEmployee, Employee{
+	// 		name: "Reza",
+	// 		address: "Bandung",
+	// 		position: "staf",
+	// 	})
+	// 	fmt.Println(arrEmployee)
+	// 	fmt.Println(arrEmployee)
+	
+	// var a [2]string = [2]string{"Go","c"}
+	// fmt.Println(a)
+
+	// var primes [6]int = [6]int{2, 3, 5, 7, 11}
+	// numprimes := 
+
+	// // var result []string 
+	// // for _, value := range primes {
+	// // result = append(result, value)
+
+	// fmt.Println(result)
+	// // fmt.Println(primes[3],primes[4],primes[5])
+
+	// }
+	
+	
 
 
 
@@ -446,3 +501,4 @@ func main()  {
 
 // 	pointerNumb := &number // alokasi data ke dalam virtual memori
 // 	fmt.Println(*pointerNumb) // cara akses valuenya *+variabel
+
